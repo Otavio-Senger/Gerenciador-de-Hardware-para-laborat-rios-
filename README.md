@@ -39,4 +39,26 @@ O sistema gerenciará:
 
 ### 2.4. Gerenciamento de Laboratórios
 
-- 
+- Deve-se gerenciar diversos laboratórios associando às máquinas e peças.
+- Diversos painéis que mostrem o status da máquina, quantidade de peças no estoque em todos os laboratórios.
+
+### 2.5. Controle de Acesso e Usuários
+
+- O sistema deve permitir a criação de perfis de usuário com diferentes níveis de acesso (técnicos, administradores).
+
+## 3. Requisitos Não Funcionais
+
+### 3.1. Usabilidade
+
+- O sistema deve ter uma interface simples para a facilidade do uso do usuário
+
+  ## **4. Requisitos de Interface**
+
+### **4.1. Interface Gráfica**
+
+- O sistema deve ter uma interface gráfica baseada em JavaFX ou Swing.
+
+
+#### **Considerações finais**
+
+O sistema deve facilitar o controle e o monitoramento das máquinas e peças de hardware, proporcionando maior eficiência na gestão de manutenção e inventário dos laboratórios. Este documento deverá ser revisado periodicamente conforme novas funcionalidades e necessidades sejam identificadas.
