@@ -34,6 +34,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
     private void initComponents() {
 
         desktopPrincipal = new javax.swing.JPanel();
+        lblIMG = new javax.swing.JLabel();
         lblNome = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -50,22 +51,35 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        desktopPrincipal.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblIMG.setBackground(new java.awt.Color(255, 255, 255));
+        lblIMG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logocsl.jpg"))); // NOI18N
+
         javax.swing.GroupLayout desktopPrincipalLayout = new javax.swing.GroupLayout(desktopPrincipal);
         desktopPrincipal.setLayout(desktopPrincipalLayout);
         desktopPrincipalLayout.setHorizontalGroup(
             desktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(desktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(desktopPrincipalLayout.createSequentialGroup()
+                    .addGap(100, 100, 100)
+                    .addComponent(lblIMG)
+                    .addContainerGap(100, Short.MAX_VALUE)))
         );
         desktopPrincipalLayout.setVerticalGroup(
             desktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 393, Short.MAX_VALUE)
+            .addGap(0, 282, Short.MAX_VALUE)
+            .addGroup(desktopPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(desktopPrincipalLayout.createSequentialGroup()
+                    .addGap(58, 58, 58)
+                    .addComponent(lblIMG, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(48, Short.MAX_VALUE)))
         );
-
-        lblNome.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jMenu1.setText("Cadastros");
 
-        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         subMenuAdmintrador.setSelected(true);
         subMenuAdmintrador.setText("Usuário");
         subMenuAdmintrador.addActionListener(new java.awt.event.ActionListener() {
@@ -81,6 +95,11 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jCheckBoxMenuItem4.setSelected(true);
         jCheckBoxMenuItem4.setText("Adicionar máquina");
+        jCheckBoxMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem4ActionPerformed(evt);
+            }
+        });
         Máquinas.add(jCheckBoxMenuItem4);
 
         jCheckBoxMenuItem5.setSelected(true);
@@ -91,7 +110,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jMenu4.setText("Laboratórios");
 
-        jCheckBoxMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jCheckBoxMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Labin A");
         jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -101,7 +120,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         });
         jMenu4.add(jCheckBoxMenuItem1);
 
-        jCheckBoxMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jCheckBoxMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
         jCheckBoxMenuItem2.setSelected(true);
         jCheckBoxMenuItem2.setText("Labin B");
         jCheckBoxMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -111,7 +130,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         });
         jMenu4.add(jCheckBoxMenuItem2);
 
-        jCheckBoxMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jCheckBoxMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
         jCheckBoxMenuItem3.setSelected(true);
         jCheckBoxMenuItem3.setText("Labin c");
         jMenu4.add(jCheckBoxMenuItem3);
@@ -130,15 +149,15 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
             .addComponent(desktopPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(298, Short.MAX_VALUE))
+                .addComponent(lblNome, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(desktopPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 15, Short.MAX_VALUE))
+                .addComponent(lblNome, javax.swing.GroupLayout.DEFAULT_SIZE, 14, Short.MAX_VALUE))
         );
 
         pack();
@@ -150,6 +169,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         TelaAdministrador tadmin = new TelaAdministrador();
         desktopPrincipal.add(tadmin);
         tadmin.setVisible(true);
+        lblIMG.setVisible(false);
         
         
         
@@ -162,6 +182,14 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
     private void jCheckBoxMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
+
+    private void jCheckBoxMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem4ActionPerformed
+        
+        telaAdicionarMaquinasVIEW telaaddmq = new telaAdicionarMaquinasVIEW();
+        desktopPrincipal.add(telaaddmq);
+        telaaddmq.setVisible(true);
+        
+    }//GEN-LAST:event_jCheckBoxMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,6 +238,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JLabel lblIMG;
     public static javax.swing.JLabel lblNome;
     private javax.swing.JRadioButtonMenuItem subMenuAdmintrador;
     // End of variables declaration//GEN-END:variables
