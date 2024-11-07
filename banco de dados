@@ -1,6 +1,8 @@
 create database projetoaplicadoII;
 use projetoaplicadoII;
 
+select*from equipamentos;
+
 create table usuarios(
 id_usu int auto_increment primary key,
 nome_usu varchar(50) not null unique,
@@ -21,6 +23,8 @@ create table equipamentos(
 id_eq int auto_increment primary key,
 status_equipamento varchar(50) not null
 );
+
+select*from pecas;
 
 create table laboratorios(
 id_lab int auto_increment primary key,
@@ -54,27 +58,20 @@ add column id_lab int,
 add constraint fk_laboratorio
 foreign key (id_lab) references laboratorios(id_lab);
 
-alter table equipamentos
-add column id_pc int,
-add constraint fk_pecas2
-foreign key (id_pc) references pecas(id_pc);
-
-alter table equipamentos
-add column id_mn int,
-add constraint fk_manutencao
-foreign key (id_mn) references manutencoes(id_mn);
-
-alter table laboratorios
-add column id_eq int,
-add constraint fk_equipamento2
-foreign key (id_eq) references equipamentos(id_eq);
-
-alter table laboratorios
-add column id_mn int,
-add constraint fk_manutencao2
-foreign key (id_mn) references manutencoes(id_mn);
-
 alter table pecas
 add column id_eq int,
 add constraint fk_equipamento3
 foreign key (id_eq) references equipamentos(id_eq);
+
+insert into laboratorios(id_lab, letra_lab)
+values (1, "A");
+
+insert into laboratorios(id_lab, letra_lab)
+values (2, "B");
+
+insert into laboratorios(id_lab, letra_lab)
+values (3, "C");
+
+select*from equipamentos;
+
+
