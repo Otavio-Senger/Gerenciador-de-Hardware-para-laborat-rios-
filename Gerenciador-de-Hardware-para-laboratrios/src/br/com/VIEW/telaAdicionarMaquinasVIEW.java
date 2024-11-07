@@ -6,27 +6,32 @@ package br.com.VIEW;
 
 import br.com.DAO.conexaoDAO;
 import br.com.DAO.maquinaDAO;
+import br.com.DTO.laboratorioDTO;
+import br.com.DTO.manutencaoDTO;
 import br.com.DTO.maquinaDTO;
+import br.com.DTO.pecasDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author Otávio
  */
 public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
-      Connection conexao = null;
+
+    Connection conexao = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    
-        maquinaDTO maqdto = new maquinaDTO();
-        maquinaDAO maqdao = new maquinaDAO();
-    
+
+    maquinaDTO maqdto = new maquinaDTO();
+    maquinaDAO maqdao = new maquinaDAO();
+
     public telaAdicionarMaquinasVIEW() {
         initComponents();
         conexao = conexaoDAO.conector();
-        
+
     }
 
     /**
@@ -45,11 +50,7 @@ public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
         btnAdicionar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
-        btnPesquisar = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setText("ID");
 
@@ -65,137 +66,144 @@ public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
         });
 
         btnExcluir.setText("Excluir");
-
-        btnEditar.setText("Editar");
-
-        btnPesquisar.setText("Pesquisar");
-        btnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnPesquisarActionPerformed(evt);
+                btnExcluirActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("ID peças");
+        btnEditar.setText("Editar");
+        btnEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarActionPerformed(evt);
+            }
+        });
 
-        jLabel3.setText("ID manutenção");
+        jLabel2.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        jLabel2.setText("Adicionar Máquinas");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAdicionar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField1)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE))
-                                    .addComponent(jLabel3)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(caixaStatus, 0, 155, Short.MAX_VALUE)
-                                            .addComponent(caixaLaboratorio, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                                .addGap(22, 22, 22)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnEditar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnExcluir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(btnPesquisar, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)))
+                                    .addComponent(caixaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(caixaLaboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(50, 50, 50))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
-                                .addComponent(btnAdicionar)))
-                        .addGap(22, 22, 22))))
+                                .addGap(18, 18, 18)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 18, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(16, 16, 16)
+                .addComponent(btnAdicionar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(btnExcluir, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(jLabel2)
-                        .addGap(1, 1, 1)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(btnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(caixaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                        .addComponent(btnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(caixaLaboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel1)))
+                .addGap(40, 40, 40)
+                .addComponent(caixaStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(caixaLaboratorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-        
-        
-         int id = Integer.parseInt(txtID.getText());
+
+        String id = txtID.getText();
         String status = (String) caixaStatus.getSelectedItem();
-        int laboratorio = (int) caixaLaboratorio.getSelectedItem();
-        
-        maqdto.setId_eq(id);
+        String laboratorioSelecionado = (String) caixaLaboratorio.getSelectedItem();
+//        laboratorioDTO lab = new laboratorioDTO();
+//        lab.setId_lab(Integer.parseInt(caixaLaboratorio.getSelectedItem().toString()));
+
+        if (id.isEmpty() || status.equals("Selecione o Status") || laboratorioSelecionado.equals("Selecione o laboratório")) {
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser obrigatórios", "erro", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        int idInt = Integer.parseInt(id);
+        laboratorioDTO lab = new laboratorioDTO();
+        lab.setId_lab(Integer.parseInt(laboratorioSelecionado));
+
+        maqdto.setId_eq(idInt);
         maqdto.setStatus(status);
-        maqdto.setId_labo(laboratorio);
-        
+        maqdto.setLaboratorio(lab);
+
         maqdao.cadastrar(maqdto);
-        
-        
+
+
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
-    private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
+    private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
+
+        int id = Integer.parseInt(txtID.getText());
+        String status = (String) caixaStatus.getSelectedItem();
+        laboratorioDTO lab = new laboratorioDTO();
+        lab.setId_lab(Integer.parseInt(caixaLaboratorio.getSelectedItem().toString()));
+
+        maqdto.setId_eq(id);
+        maqdto.setStatus(status);
+        maqdto.setLaboratorio(lab);
         
-       
+        maqdao.editar(maqdto);
+
+    }//GEN-LAST:event_btnEditarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        
+        int id = Integer.parseInt(txtID.getText());
+        String status = (String) caixaStatus.getSelectedItem();
+        laboratorioDTO lab = new laboratorioDTO();
+        lab.setId_lab(Integer.parseInt(caixaLaboratorio.getSelectedItem().toString()));
+
+        maqdto.setId_eq(id);
+        maqdto.setStatus(status);
+        maqdto.setLaboratorio(lab);
+        
+        maqdao.excluir(maqdto);
         
         
-      
-    }//GEN-LAST:event_btnPesquisarActionPerformed
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton btnPesquisar;
     public static javax.swing.JComboBox<String> caixaLaboratorio;
     private javax.swing.JComboBox<String> caixaStatus;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }

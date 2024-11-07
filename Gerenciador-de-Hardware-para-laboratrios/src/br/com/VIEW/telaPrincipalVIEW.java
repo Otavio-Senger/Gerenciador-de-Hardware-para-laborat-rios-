@@ -22,7 +22,6 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         initComponents();
 
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -79,7 +78,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jMenu1.setText("Cadastros");
 
-        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
         subMenuAdmintrador.setSelected(true);
         subMenuAdmintrador.setText("Usuário");
         subMenuAdmintrador.addActionListener(new java.awt.event.ActionListener() {
@@ -104,13 +103,18 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jCheckBoxMenuItem5.setSelected(true);
         jCheckBoxMenuItem5.setText("Consultar todas");
+        jCheckBoxMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBoxMenuItem5ActionPerformed(evt);
+            }
+        });
         Máquinas.add(jCheckBoxMenuItem5);
 
         jMenuBar1.add(Máquinas);
 
         jMenu4.setText("Laboratórios");
 
-        jCheckBoxMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_MASK));
+        jCheckBoxMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jCheckBoxMenuItem1.setSelected(true);
         jCheckBoxMenuItem1.setText("Labin A");
         jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -120,7 +124,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         });
         jMenu4.add(jCheckBoxMenuItem1);
 
-        jCheckBoxMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_MASK));
+        jCheckBoxMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jCheckBoxMenuItem2.setSelected(true);
         jCheckBoxMenuItem2.setText("Labin B");
         jCheckBoxMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +134,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         });
         jMenu4.add(jCheckBoxMenuItem2);
 
-        jCheckBoxMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_MASK));
+        jCheckBoxMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         jCheckBoxMenuItem3.setSelected(true);
         jCheckBoxMenuItem3.setText("Labin c");
         jMenu4.add(jCheckBoxMenuItem3);
@@ -165,14 +169,19 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void subMenuAdmintradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuAdmintradorActionPerformed
-        
+
+        if (desktopPrincipal.getComponentCount() > 0) {
+            desktopPrincipal.removeAll();  // Remove todos os componentes do painel
+        }
+
         TelaAdministrador tadmin = new TelaAdministrador();
         desktopPrincipal.add(tadmin);
         tadmin.setVisible(true);
         lblIMG.setVisible(false);
-        
-        
-        
+        desktopPrincipal.revalidate(); 
+        desktopPrincipal.repaint();
+
+
     }//GEN-LAST:event_subMenuAdmintradorActionPerformed
 
     private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
@@ -184,12 +193,34 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
 
     private void jCheckBoxMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem4ActionPerformed
-        
+
+        if (desktopPrincipal.getComponentCount() > 0) {
+            desktopPrincipal.removeAll();  // Remove todos os componentes do painel
+        }
+
         telaAdicionarMaquinasVIEW telaaddmq = new telaAdicionarMaquinasVIEW();
         desktopPrincipal.add(telaaddmq);
         telaaddmq.setVisible(true);
-        
+        lblIMG.setVisible(false);
+        desktopPrincipal.revalidate();
+        desktopPrincipal.repaint();
+
     }//GEN-LAST:event_jCheckBoxMenuItem4ActionPerformed
+
+    private void jCheckBoxMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem5ActionPerformed
+
+        if (desktopPrincipal.getComponentCount() > 0) {
+            desktopPrincipal.removeAll();  // Remove todos os componentes do painel
+        }
+
+        telaConsultarMaquinasVIEW telaconsulta = new telaConsultarMaquinasVIEW();
+        desktopPrincipal.add(telaconsulta);
+        telaconsulta.setVisible(true);
+        lblIMG.setVisible(false);
+        desktopPrincipal.revalidate();
+        desktopPrincipal.repaint();
+
+    }//GEN-LAST:event_jCheckBoxMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

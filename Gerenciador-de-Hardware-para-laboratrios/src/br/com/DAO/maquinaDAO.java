@@ -1,6 +1,7 @@
 package br.com.DAO;
 
 import br.com.DTO.maquinaDTO;
+import br.com.VIEW.telaAdicionarMaquinasVIEW;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -12,35 +13,74 @@ public class maquinaDAO {
     PreparedStatement pst = null;
     ResultSet rs = null;
 
+    public void cadastrar(maquinaDTO maqdto) {
 
-public void cadastrar(maquinaDTO maqdto){
-    
-    String sql = "insert into equipamentos (id_eq, status_equipamento, id_lab) values (?, ?, ?)";
-    
-    conexao = new conexaoDAO().conector();
-    
-    try {
-         pst = conexao.prepareStatement(sql);
-         pst.setInt(1, maqdto.getId_eq());
-         pst.setString(2, maqdto.getStatus());
-        pst.setObject(3, maqdto.getid_lab());
-//        pst.setInt(3, maqdto.getId_labo());
-        
-        
-           int add = pst.executeUpdate();
+        String sql = "insert into equipamentos (id_eq, status_equipamento, id_lab) values (?, ?, ?)";
+
+        conexao = new conexaoDAO().conector();
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setInt(1, maqdto.getId_eq());
+            pst.setString(2, maqdto.getStatus());
+            pst.setInt(3, maqdto.getLaboratorio().getId_lab());
+
+            int add = pst.executeUpdate();
             if (add > 0) {
                 pst.close();
                 JOptionPane.showMessageDialog(null, "Máquina inserido com sucesso!");
             }
-    } catch (Exception e) {
-        
-                    JOptionPane.showMessageDialog(null, "inserir maquina" + e);
+        } catch (Exception e) {
 
+            JOptionPane.showMessageDialog(null, "inserir maquina" + e);
+
+        }
+
+    }
+
+    public void editar(maquinaDTO maqdto) {
+
+        String sql = "update equipamentos set status_equipamento = ?, id_lab = ? where id_eq = ?";
+        conexao = new conexaoDAO().conector();
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setInt(3, maqdto.getId_eq());
+            pst.setString(1, maqdto.getStatus());
+            pst.setInt(2, maqdto.getLaboratorio().getId_lab());
+
+            int add = pst.executeUpdate();
+            if (add > 0) {
+                conexao.close();
+                JOptionPane.showMessageDialog(null, "Máquina editado com sucesso!");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Método editar " + e);
+
+        }
+
+    }
+    
+    public void excluir(maquinaDTO maqdto) {
+    
+        String sql = "delete from equipamentos where id_eq = ?";
+        conexao = new conexaoDAO().conector();
+        
+        try {
+            pst = conexao.prepareStatement(sql);
+            pst.setInt(1, maqdto.getId_eq());
+            
+            int add = pst.executeUpdate();
+            if (add > 0) {
+                conexao.close();
+                JOptionPane.showMessageDialog(null, "Máquina deletada com sucesso!");
+            }
+            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "método excluir(DAO)" + e);
+        }
         
     }
 
 }
-
-}
-
-

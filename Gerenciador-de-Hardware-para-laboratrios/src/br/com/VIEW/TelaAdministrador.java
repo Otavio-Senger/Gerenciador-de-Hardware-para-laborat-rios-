@@ -25,6 +25,8 @@ public class TelaAdministrador extends javax.swing.JInternalFrame {
     public TelaAdministrador() {
         initComponents();
         conexao = conexaoDAO.conector();
+        usuarioDAO udao = new usuarioDAO();
+        udao.preenchertabela();
     }
 
     /**
