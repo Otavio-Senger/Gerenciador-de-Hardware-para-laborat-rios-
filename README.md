@@ -1,8 +1,8 @@
 # Documento de Levantamento de Requisitos
 
-Projeto: Gerenciador de Hardware para Laboratórios 
-Data: 24/10/2024
-Responsável:
+#### Projeto: Gerenciador de Hardware para Laboratórios 
+#### Data: 24/10/2024
+#### Responsável:
 - Maria Fernanda Chmiel Fagundes
 - Otávio Porto Senger
 
