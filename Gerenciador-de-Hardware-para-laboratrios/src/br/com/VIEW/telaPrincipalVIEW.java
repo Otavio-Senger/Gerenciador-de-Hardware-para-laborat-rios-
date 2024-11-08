@@ -5,7 +5,9 @@
  */
 package br.com.VIEW;
 
+import br.com.DTO.laboratorioDTO;
 import java.awt.Graphics;
+import java.awt.List;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
@@ -22,6 +24,9 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         initComponents();
 
     }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -41,11 +46,10 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         Máquinas = new javax.swing.JMenu();
         jCheckBoxMenuItem4 = new javax.swing.JCheckBoxMenuItem();
         jCheckBoxMenuItem5 = new javax.swing.JCheckBoxMenuItem();
-        jMenu4 = new javax.swing.JMenu();
-        jCheckBoxMenuItem1 = new javax.swing.JCheckBoxMenuItem();
-        jCheckBoxMenuItem2 = new javax.swing.JCheckBoxMenuItem();
-        jCheckBoxMenuItem3 = new javax.swing.JCheckBoxMenuItem();
+        menuLaboratorios = new javax.swing.JMenu();
+        subMenuaddLabin = new javax.swing.JRadioButtonMenuItem();
         jMenu5 = new javax.swing.JMenu();
+        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -78,7 +82,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jMenu1.setText("Cadastros");
 
-        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
         subMenuAdmintrador.setSelected(true);
         subMenuAdmintrador.setText("Usuário");
         subMenuAdmintrador.addActionListener(new java.awt.event.ActionListener() {
@@ -112,36 +116,26 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jMenuBar1.add(Máquinas);
 
-        jMenu4.setText("Laboratórios");
+        menuLaboratorios.setText("Laboratórios");
 
-        jCheckBoxMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jCheckBoxMenuItem1.setSelected(true);
-        jCheckBoxMenuItem1.setText("Labin A");
-        jCheckBoxMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        subMenuaddLabin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        subMenuaddLabin.setSelected(true);
+        subMenuaddLabin.setText("Adicionar Labin");
+        subMenuaddLabin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxMenuItem1ActionPerformed(evt);
+                subMenuaddLabinActionPerformed(evt);
             }
         });
-        jMenu4.add(jCheckBoxMenuItem1);
+        menuLaboratorios.add(subMenuaddLabin);
 
-        jCheckBoxMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_B, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jCheckBoxMenuItem2.setSelected(true);
-        jCheckBoxMenuItem2.setText("Labin B");
-        jCheckBoxMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBoxMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu4.add(jCheckBoxMenuItem2);
-
-        jCheckBoxMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jCheckBoxMenuItem3.setSelected(true);
-        jCheckBoxMenuItem3.setText("Labin c");
-        jMenu4.add(jCheckBoxMenuItem3);
-
-        jMenuBar1.add(jMenu4);
+        jMenuBar1.add(menuLaboratorios);
 
         jMenu5.setText("Manutenções");
+
+        jRadioButtonMenuItem1.setSelected(true);
+        jRadioButtonMenuItem1.setText("Adicionar manutenção");
+        jMenu5.add(jRadioButtonMenuItem1);
+
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -184,14 +178,6 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
     }//GEN-LAST:event_subMenuAdmintradorActionPerformed
 
-    private void jCheckBoxMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxMenuItem1ActionPerformed
-
-    private void jCheckBoxMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBoxMenuItem2ActionPerformed
-
     private void jCheckBoxMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBoxMenuItem4ActionPerformed
 
         if (desktopPrincipal.getComponentCount() > 0) {
@@ -221,6 +207,23 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         desktopPrincipal.repaint();
 
     }//GEN-LAST:event_jCheckBoxMenuItem5ActionPerformed
+
+    private void subMenuaddLabinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuaddLabinActionPerformed
+        
+        
+        if (desktopPrincipal.getComponentCount() > 0) {
+            desktopPrincipal.removeAll();  // Remove todos os componentes do painel
+        }
+
+        TelaADDlabin addlabin = new TelaADDlabin();
+        desktopPrincipal.add(addlabin);
+        addlabin.setVisible(true);
+        lblIMG.setVisible(false);
+        desktopPrincipal.revalidate();
+        desktopPrincipal.repaint();
+
+        
+    }//GEN-LAST:event_subMenuaddLabinActionPerformed
 
     /**
      * @param args the command line arguments
@@ -260,17 +263,16 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Máquinas;
     private javax.swing.JPanel desktopPrincipal;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem2;
-    private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem3;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem4;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem5;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JLabel lblIMG;
     public static javax.swing.JLabel lblNome;
+    private javax.swing.JMenu menuLaboratorios;
     private javax.swing.JRadioButtonMenuItem subMenuAdmintrador;
+    private javax.swing.JRadioButtonMenuItem subMenuaddLabin;
     // End of variables declaration//GEN-END:variables
 }

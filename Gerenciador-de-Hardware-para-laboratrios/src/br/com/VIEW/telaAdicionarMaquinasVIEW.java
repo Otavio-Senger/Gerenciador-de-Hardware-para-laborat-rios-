@@ -59,6 +59,7 @@ public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
         caixaLaboratorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o laboratório", "1", "2", "3" }));
 
         btnAdicionar.setText("Adicionar");
+        btnAdicionar.setToolTipText("Adicionar");
         btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdicionarActionPerformed(evt);
@@ -143,8 +144,7 @@ public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
         String id = txtID.getText();
         String status = (String) caixaStatus.getSelectedItem();
         String laboratorioSelecionado = (String) caixaLaboratorio.getSelectedItem();
-//        laboratorioDTO lab = new laboratorioDTO();
-//        lab.setId_lab(Integer.parseInt(caixaLaboratorio.getSelectedItem().toString()));
+
 
         if (id.isEmpty() || status.equals("Selecione o Status") || laboratorioSelecionado.equals("Selecione o laboratório")) {
             JOptionPane.showMessageDialog(null, "Todos os campos devem ser obrigatórios", "erro", JOptionPane.ERROR_MESSAGE);
