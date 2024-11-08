@@ -80,7 +80,7 @@ Acrônimos e Abreviações: INV
 
 - O sistema deve ter uma interface gráfica baseada em JavaFX ou Swing.
 
-#### **Considerações finais**
+## **Considerações finais**
 
 O sistema facilita o controle e o monitoramento das máquinas e peças, proporcionando maior eficiência na gestão de manutenção e 
 inventário dos laboratórios. Este documento deverá ser revisado periodicamente conforme novas funcionalidades e necessidades sejam identificadas.
