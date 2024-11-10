@@ -4,6 +4,7 @@
  */
 package br.com.VIEW;
 
+import br.com.DAO.addLabinDAO;
 import br.com.DAO.conexaoDAO;
 import br.com.DAO.maquinaDAO;
 import br.com.DTO.laboratorioDTO;
@@ -31,6 +32,8 @@ public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
     public telaAdicionarMaquinasVIEW() {
         initComponents();
         conexao = conexaoDAO.conector();
+        addLabinDAO ldao = new addLabinDAO();
+        ldao.preencherCaixa();
 
     }
 
@@ -54,9 +57,9 @@ public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
 
         jLabel1.setText("ID");
 
-        caixaStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o Status", "Funcionando", "Não Funcionando" }));
+        caixaStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o Status", "Funcionando", "Não Funcionando", "Em manutenção" }));
 
-        caixaLaboratorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o laboratório", "1", "2", "3" }));
+        caixaLaboratorio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione o laboratório" }));
 
         btnAdicionar.setText("Adicionar");
         btnAdicionar.setToolTipText("Adicionar");
@@ -182,13 +185,10 @@ public class telaAdicionarMaquinasVIEW extends javax.swing.JInternalFrame {
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         
         int id = Integer.parseInt(txtID.getText());
-        String status = (String) caixaStatus.getSelectedItem();
-        laboratorioDTO lab = new laboratorioDTO();
-        lab.setId_lab(Integer.parseInt(caixaLaboratorio.getSelectedItem().toString()));
+        
 
         maqdto.setId_eq(id);
-        maqdto.setStatus(status);
-        maqdto.setLaboratorio(lab);
+       
         
         maqdao.excluir(maqdto);
         

@@ -2,6 +2,7 @@ package br.com.DAO;
 
 import br.com.DTO.UsuarioDTO;
 import br.com.VIEW.TelaAdministrador;
+import br.com.VIEW.telaADDmanutencao;
 import br.com.VIEW.telaPrincipalVIEW;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,13 +55,14 @@ public class usuarioDAO {
             pst.setString(3, udto.getEmail_usu());
             pst.setString(4, udto.getSenha_usu());
             pst.setString(5, udto.getPerfil_usu());
-
+            
             int add = pst.executeUpdate();
             if (add > 0) {
                 pst.close();
                 JOptionPane.showMessageDialog(null, "Usuários inserido com sucesso!");
                 limpar();
                 preenchertabela();
+                
             }
 
         } catch (Exception e) {
@@ -136,6 +138,7 @@ public class usuarioDAO {
                 JOptionPane.showMessageDialog(null, "Usuário deletado com sucesso!");
                 limpar();
                 preenchertabela();
+               
 
             }
 

@@ -3,6 +3,7 @@ package br.com.DAO;
 import br.com.DTO.laboratorioDTO;
 import br.com.VIEW.TelaADDlabin;
 import br.com.VIEW.TelaAdministrador;
+import br.com.VIEW.telaAdicionarMaquinasVIEW;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -118,5 +119,25 @@ public class addLabinDAO {
             JOptionPane.showMessageDialog(null, "Erro ao preencher a tabela: " + e);
         }
 
+    }
+    
+    public void preencherCaixa(){
+    
+        String sql = "select*from laboratorios";
+        conexao = new conexaoDAO().conector();
+        
+        try {
+            pst = conexao.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            telaAdicionarMaquinasVIEW.caixaLaboratorio.removeAllItems();
+            
+            while(rs.next()){
+            telaAdicionarMaquinasVIEW.caixaLaboratorio.addItem(rs.getString("id_lab"));
+            }
+                    
+        } catch (Exception e) {
+        }
+        
     }
 }

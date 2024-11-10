@@ -33,14 +33,6 @@ public class maquinaDTO {
     }
 
 
-   
-
-   
-
-   
-  
-  
-  
   
         
 }

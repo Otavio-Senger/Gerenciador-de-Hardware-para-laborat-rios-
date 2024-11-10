@@ -1,6 +1,7 @@
 package br.com.DAO;
 
 import br.com.DTO.maquinaDTO;
+import br.com.VIEW.telaADDmanutencao;
 import br.com.VIEW.telaAdicionarMaquinasVIEW;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -29,6 +30,7 @@ public class maquinaDAO {
             if (add > 0) {
                 pst.close();
                 JOptionPane.showMessageDialog(null, "Máquina inserido com sucesso!");
+                preencherCaixa();
             }
         } catch (Exception e) {
 
@@ -61,26 +63,48 @@ public class maquinaDAO {
         }
 
     }
-    
+
     public void excluir(maquinaDTO maqdto) {
-    
+
         String sql = "delete from equipamentos where id_eq = ?";
         conexao = new conexaoDAO().conector();
-        
+
         try {
             pst = conexao.prepareStatement(sql);
             pst.setInt(1, maqdto.getId_eq());
-            
+
             int add = pst.executeUpdate();
             if (add > 0) {
                 conexao.close();
                 JOptionPane.showMessageDialog(null, "Máquina deletada com sucesso!");
+                preencherCaixa();
             }
-            
+
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "método excluir(DAO)" + e);
         }
-        
+
+    }
+
+    public void preencherCaixa() {
+
+        String sql = "select*from equipamentos";
+        conexao = new conexaoDAO().conector();
+
+        try {
+            pst = conexao.prepareStatement(sql);
+            rs = pst.executeQuery();
+            
+            telaADDmanutencao.caixaIDeq.removeAllItems();
+            
+            while(rs.next()){
+            telaADDmanutencao.caixaIDeq.addItem(rs.getString("id_eq"));
+            }
+            
+            
+        } catch (Exception e) {
+        }
+
     }
 
 }

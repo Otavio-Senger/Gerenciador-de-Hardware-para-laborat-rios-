@@ -1,18 +1,15 @@
-
 package br.com.DTO;
 
 import java.sql.Date;
 
-
 public class manutencaoDTO {
+
     private int id_mn;
     private Date data_mn;
     private String status_mn;
     private String hora_mn;
     private String tipo_mn;
-    private UsuarioDTO id_usu;
-    private maquinaDTO id_eq;
-    private pecasDTO id_pc;
+    private maquinaDTO maquina;
 
     public int getId_mn() {
         return id_mn;
@@ -54,30 +51,18 @@ public class manutencaoDTO {
         this.tipo_mn = tipo_mn;
     }
 
-    public UsuarioDTO getId_usu() {
-        return id_usu;
+    public maquinaDTO getMaquina() {
+        return maquina;
     }
 
-    public void setId_usu(UsuarioDTO id_usu) {
-        this.id_usu = id_usu;
+    public void setMaquina(maquinaDTO maquina) {
+        this.maquina = maquina;
     }
-
-    public maquinaDTO getId_eq() {
-        return id_eq;
-    }
-
-    public void setId_eq(maquinaDTO id_eq) {
-        this.id_eq = id_eq;
-    }
-
-    public pecasDTO getId_pc() {
-        return id_pc;
-    }
-
-    public void setId_pc(pecasDTO id_pc) {
-        this.id_pc = id_pc;
-    }
-    
-    
-    
+    public manutencaoDTO() {
+    this.maquina = new maquinaDTO();
 }
+
+
+}
+
+

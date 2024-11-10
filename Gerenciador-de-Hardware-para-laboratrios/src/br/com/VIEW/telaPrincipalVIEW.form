@@ -72,11 +72,14 @@
             <Property name="text" type="java.lang.String" value="Manuten&#xe7;&#xf5;es"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="jRadioButtonMenuItem1">
+            <MenuItem class="javax.swing.JRadioButtonMenuItem" name="subMenuADDmanutencao">
               <Properties>
                 <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Adicionar manuten&#xe7;&#xe3;o"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="subMenuADDmanutencaoActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

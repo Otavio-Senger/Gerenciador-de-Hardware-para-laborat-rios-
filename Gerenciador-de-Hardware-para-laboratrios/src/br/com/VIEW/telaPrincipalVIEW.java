@@ -49,7 +49,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         menuLaboratorios = new javax.swing.JMenu();
         subMenuaddLabin = new javax.swing.JRadioButtonMenuItem();
         jMenu5 = new javax.swing.JMenu();
-        jRadioButtonMenuItem1 = new javax.swing.JRadioButtonMenuItem();
+        subMenuADDmanutencao = new javax.swing.JRadioButtonMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -82,7 +82,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jMenu1.setText("Cadastros");
 
-        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_MASK));
+        subMenuAdmintrador.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.ALT_DOWN_MASK));
         subMenuAdmintrador.setSelected(true);
         subMenuAdmintrador.setText("Usuário");
         subMenuAdmintrador.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +118,7 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         menuLaboratorios.setText("Laboratórios");
 
-        subMenuaddLabin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        subMenuaddLabin.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         subMenuaddLabin.setSelected(true);
         subMenuaddLabin.setText("Adicionar Labin");
         subMenuaddLabin.addActionListener(new java.awt.event.ActionListener() {
@@ -132,9 +132,14 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
 
         jMenu5.setText("Manutenções");
 
-        jRadioButtonMenuItem1.setSelected(true);
-        jRadioButtonMenuItem1.setText("Adicionar manutenção");
-        jMenu5.add(jRadioButtonMenuItem1);
+        subMenuADDmanutencao.setSelected(true);
+        subMenuADDmanutencao.setText("Adicionar manutenção");
+        subMenuADDmanutencao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMenuADDmanutencaoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(subMenuADDmanutencao);
 
         jMenuBar1.add(jMenu5);
 
@@ -225,6 +230,19 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
         
     }//GEN-LAST:event_subMenuaddLabinActionPerformed
 
+    private void subMenuADDmanutencaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuADDmanutencaoActionPerformed
+         if (desktopPrincipal.getComponentCount() > 0) {
+            desktopPrincipal.removeAll();  // Remove todos os componentes do painel
+        }
+
+        telaADDmanutencao addmanutencao = new telaADDmanutencao();
+        desktopPrincipal.add(addmanutencao);
+        addmanutencao.setVisible(true);
+        lblIMG.setVisible(false);
+        desktopPrincipal.revalidate();
+        desktopPrincipal.repaint();
+    }//GEN-LAST:event_subMenuADDmanutencaoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -268,10 +286,10 @@ public class telaPrincipalVIEW extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JRadioButtonMenuItem jRadioButtonMenuItem1;
     private javax.swing.JLabel lblIMG;
     public static javax.swing.JLabel lblNome;
     private javax.swing.JMenu menuLaboratorios;
+    private javax.swing.JRadioButtonMenuItem subMenuADDmanutencao;
     private javax.swing.JRadioButtonMenuItem subMenuAdmintrador;
     private javax.swing.JRadioButtonMenuItem subMenuaddLabin;
     // End of variables declaration//GEN-END:variables
