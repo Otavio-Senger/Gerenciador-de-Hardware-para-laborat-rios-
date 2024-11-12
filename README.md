@@ -7,6 +7,9 @@
 # Indice
 - [Descrição do Projeto]
 - [Badges]
+- Tecnologias Utilizadas
+- Funcionalidades Implementadas
+- Contatos
   
 # Descrição Detalhada do Projeto
 Este projeto é um sistema de gerenciamento de tarefas que permite aos usuários criar,
@@ -25,8 +28,6 @@ cobertura de testes, versões de software, licenças, entre outros.
 - Banco de Dados: MySQL.
 - Ferramenta de Gerenciamento de Banco de Dados: MySQL Workbench.
 - JDBC (Java Database Connectivity) para conexão e manipulação do banco de dados.
-
-# IDEs/Editores utilizados
 
 # Funcionalidades Implementadas
 
