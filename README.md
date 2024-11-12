@@ -31,7 +31,7 @@ cobertura de testes, versões de software, licenças, entre outros.
 ## Funcionalidades Implementadas
 
 ## Contatos
-Gmail(<https://img.shields.io/badge/Gmail-D14836>?style=for-the-badge&logo=gmail&logoColor=white>)
+Gmail(https://img.shields.io/badge/Gmail-D14836>?style=for-the-badge&logo=gmail&logoColor=white)
 - fernandachmiel@gmail.com
 - senger.otavio@gmai.com
 
