@@ -7,14 +7,15 @@
 # Indice
 - [Descrição do Projeto]
 - [Badges]
-- Tecnologias Utilizadas
-- Funcionalidades Implementadas
-- Contatos
+- [Tecnologias Utilizadas]
+- [Funcionalidades Implementadas]
+- [Contatos]
   
 # Descrição Detalhada do Projeto
-Este projeto é um sistema de gerenciamento de tarefas que permite aos usuários criar,
-editar, excluir e visualizar suas tarefas. O objetivo é fornecer uma ferramenta intuitiva
-e eficiente para organizar e acompanhar atividades diárias...
+Este projeto é um sistema que foca no controle de máquinas, consertos e peças trocadas,
+abrangente que integra funcionalidades de inventário, manutenção e monitoramento. 
+Com objetivo de gerenciar as máquinas de quatro ou mais laboratórios de hardware,
+rastreando o status de cada máquina, manutenção realizada.
 
 # Badges
 Markdown-badges são elementos gráficos usados em arquivos Markdown para exibir informações,
@@ -30,6 +31,14 @@ cobertura de testes, versões de software, licenças, entre outros.
 - JDBC (Java Database Connectivity) para conexão e manipulação do banco de dados.
 
 # Funcionalidades Implementadas
+
+
+    - Cadastro de máquinas: Registrar informações detalhadas sobre cada máquina como id , status e localização no laboratório.
+    - Status das máquinas: Monitorar o status atual de cada máquina (funcionando, em manutenção, não funcionando).
+    - Histórico de uso: Armazenar um histórico completo das intervenções realizadas em cada máquina.
+    - Registro de manutenções: Permitir que técnicos, professores, administradores registrem as manutenções feitas em cada máquina, incluindo a data do conserto, problema diagnosticado.
+    - Agendamento de manutenção preventiva: Permitir agendar manutenções preventivas, garantindo que as máquinas sejam revisadas periodicamente.
+    - Perfis de usuários: Definir perfis de acesso para diferentes tipos de usuários, como técnicos, administradores, ou professores, com permissões variadas.
 
 # Contatos
 
