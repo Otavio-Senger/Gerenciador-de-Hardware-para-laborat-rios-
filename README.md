@@ -32,12 +32,12 @@ cobertura de testes, versões de software, licenças, entre outros.
 
 # Funcionalidades Implementadas
 
-- Cadastro de máquinas: Registrar informações detalhadas sobre cada máquina como id , status e localização no laboratório.
--  Status das máquinas: Monitorar o status atual de cada máquina (funcionando, em manutenção, não funcionando).
-- Histórico de uso: Armazenar um histórico completo das intervenções realizadas em cada máquina.
-- Registro de manutenções: Permitir que técnicos, professores, administradores registrem as manutenções feitas em cada máquina, incluindo a data do conserto, problema diagnosticado.
-- Agendamento de manutenção preventiva: Permitir agendar manutenções preventivas, garantindo que as máquinas sejam revisadas periodicamente.
-- Perfis de usuários: Definir perfis de acesso para diferentes tipos de usuários, como técnicos, administradores, ou professores, com permissões variadas.
+Cadastro de máquinas: Registrar informações detalhadas sobre cada máquina como id , status e localização no laboratório.
+Status das máquinas: Monitorar o status atual de cada máquina (funcionando, em manutenção, não funcionando).
+Histórico de uso: Armazenar um histórico completo das intervenções realizadas em cada máquina.
+Registro de manutenções: Permitir que técnicos, professores, administradores registrem as manutenções feitas em cada máquina, incluindo a data do conserto, problema diagnosticado.
+Agendamento de manutenção preventiva: Permitir agendar manutenções preventivas, garantindo que as máquinas sejam revisadas periodicamente.
+Perfis de usuários: Definir perfis de acesso para diferentes tipos de usuários, como técnicos, administradores, ou professores, com permissões variadas.
 
 # Contatos
 
