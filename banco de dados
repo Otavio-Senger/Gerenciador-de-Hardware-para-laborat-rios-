@@ -1,7 +1,9 @@
 create database projetoaplicadoII;
 use projetoaplicadoII;
 
-select*from equipamentos;
+select*from usuarios;
+insert into usuarios(id_usu, nome_usu, email_usu, senha_usu, perfil_usu)
+values (2, "fernanda", "fernanda@gmail.com", "123456", "Técnico");
 
 create table usuarios(
 id_usu int auto_increment primary key,
@@ -38,20 +40,13 @@ estoque_pc int not null,
 nome_pc varchar(50) not null
 );
 
-alter table manutencoes
-add column id_usu int,
-add constraint fk_usuario
-foreign key (id_usu) references usuarios(id_usu);
+
 
 alter table manutencoes
 add column id_eq int,
 add constraint fk_equipamento
 foreign key (id_eq) references equipamentos(id_eq);
 
-alter table manutencoes
-add column id_pc int,
-add constraint fk_pecas
-foreign key (id_pc) references pecas(id_pc);
 
 alter table equipamentos
 add column id_lab int,
@@ -73,5 +68,3 @@ insert into laboratorios(id_lab, letra_lab)
 values (3, "C");
 
 select*from equipamentos;
-
-
