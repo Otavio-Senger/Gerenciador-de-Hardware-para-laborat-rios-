@@ -3,8 +3,8 @@
 #### Projeto: Gerenciador de Hardware para Laboratórios 
 #### Data: 24/10/2024
 #### Responsáveis:
-- Maria Fernanda Chmiel Fagundes
-- Otávio Porto Senger
+- Maria Fernanda Chmiel Fagundes.
+- Otávio Porto Senger.
 
 ## 1. Introdução
 
