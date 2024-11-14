@@ -17,7 +17,7 @@ que permite o controle e monitoramento de máquinas, consertos, peças trocadas 
 
 O sistema gerencia:
 
-- Cadastro e controle de máquinas de 4 laboratórios.
+- Cadastro e controle de máquinas de 3 ou mais laboratórios.
 - Registro de manutenções, conserto.
 
 ### 1.3 Definições, Acrônimos e Abreviações
@@ -70,17 +70,17 @@ Acrônimos e Abreviações: INV
 
 ## 3. Requisitos Não Funcionais
 
-### 3.1. Usabilidade
+### 3.1 Usabilidade
 
 - O sistema deve ter uma interface simples para a facilidade do uso do usuário
 
-  ## **4. Requisitos de Interface**
+  ## 4. Requisitos de Interface
 
-### **4.1. Interface Gráfica**
+### 4.1. Interface Gráfica
 
 - O sistema deve ter uma interface gráfica baseada em JavaFX ou Swing.
 
-## **Considerações finais**
+## Considerações finais
 
 O sistema facilita o controle e o monitoramento das máquinas e peças, proporcionando maior eficiência na gestão de manutenção e 
 inventário dos laboratórios. Este documento deverá ser revisado periodicamente conforme novas funcionalidades e necessidades sejam identificadas.
