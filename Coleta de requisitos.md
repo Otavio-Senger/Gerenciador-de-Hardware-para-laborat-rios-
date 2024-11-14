@@ -18,7 +18,7 @@ que permite o controle e monitoramento de máquinas, consertos, peças trocadas 
 O sistema gerencia:
 
 - Cadastro e controle de máquinas de 3 ou mais laboratórios.
-- Registro de manutenções, conserto.
+- Registro de manutenções e consertos.
 
 ### 1.3 Definições, Acrônimos e Abreviações
 
@@ -50,29 +50,29 @@ Acrônimos e Abreviações: INV
 
 - O sistema permite o cadastro de máquinas.
 - Cada máquina tem seu devido laboratório.
-- Exibe o status da máquina (funcionando, em manutenção, não funcionando)
+- Exibe o status da máquina (funcionando, em manutenção, não funcionando).
 
 ### 2.2 Controle de Consertos e Manutenções
 
 - Registra e mostra todas as manutenções pendentes e realizadas, com suas respectivas datas
   e agenda de manutenções preventivas.
-- Contem as peças utilizadas em cada manutenção
-- Histórico completo de todas as manutenções realizadas em uma máquina
+- Contém as peças utilizadas em cada manutenção.
+- Histórico completo de todas as manutenções realizadas em uma máquina.
 
 ### 2.3 Gerenciamento de Laboratórios
 
 - Gerencia diversos laboratórios associando às máquinas e peças.
-- Diversos painéis que mostram o status da máquina
+- Diversos painéis que mostram o status da máquina.
 
 ### 2.4 Controle de Acesso e Usuários
 
-- O sistema deve permitir a criação de perfis de usuário com diferentes níveis de acesso ( administradores, estagiários, professores, técnicos).
+- O sistema deve permitir a criação de perfis de usuário com diferentes níveis de acesso (administradores, estagiários, professores, técnicos).
 
 ## 3. Requisitos Não Funcionais
 
 ### 3.1 Usabilidade
 
-- O sistema deve ter uma interface simples para a facilidade do uso do usuário
+- O sistema deve ter uma interface simples para a facilidade do uso do usuário.
 
   ## 4. Requisitos de Interface
 
@@ -83,4 +83,4 @@ Acrônimos e Abreviações: INV
 ## Considerações finais
 
 O sistema facilita o controle e o monitoramento das máquinas e peças, proporcionando maior eficiência na gestão de manutenção e 
-inventário dos laboratórios. Este documento deverá ser revisado periodicamente conforme novas funcionalidades e necessidades sejam identificadas.
+inventário dos laboratórios.
